@@ -1,14 +1,24 @@
 package com.betting.application.betting.config;
 
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Component;
-
-@Component
 public class ApiConfig {
-    @Value("http://localhost:8080")
-    private String bettingApiEndpoint;
+    private String bettingApiEndpoint = "http://localhost:8080";
+    private String bettingEndpoint = "/betting/getAvailableBets";
+
+    private static ApiConfig apiConfig;
+
+    public static ApiConfig getInstance(){
+        if(apiConfig == null) {
+            apiConfig = new ApiConfig();
+        }
+        return apiConfig;
+    }
+
 
     public String getBettingApiEndpoint() {
         return bettingApiEndpoint;
+    }
+
+    public String getBettingEndpoint() {
+        return bettingEndpoint;
     }
 }

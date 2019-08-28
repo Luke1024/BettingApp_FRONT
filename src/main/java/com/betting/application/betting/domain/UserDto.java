@@ -1,14 +1,14 @@
 package com.betting.application.betting.domain;
 
-public class User {
+public class UserDto {
     private String firstname;
     private String lastname;
     private String password;
     private String email;
 
-    public User(){}
+    public UserDto(){}
 
-    public User(String firstname, String lastname, String password, String email) {
+    public UserDto(String firstname, String lastname, String password, String email) {
         this.firstname = firstname;
         this.lastname = lastname;
         this.password = password;

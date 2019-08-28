@@ -1,0 +1,27 @@
+<link rel="import" href="bower_components/polymer/polymer.html">
+
+<dom-module id="frontend-experimental">
+    <template>
+        <style include="shared-styles">
+            :host {
+                display: block;
+            }
+        </style>
+
+    </template>
+
+    <script>
+        class FrontendExperimental extends Polymer.Element {
+            static get is() {
+                return 'frontend-experimental';
+            }
+
+            static get properties() {
+                return {
+                    // Declare your properties here.
+                };
+            }
+        }
+        customElements.define(FrontendExperimental.is, FrontendExperimental);
+    </script>
+</dom-module>
