@@ -17,6 +17,7 @@ public class MainView extends VerticalLayout {
     private SportEventService sportEventService = SportEventService.getInstance();
     private Grid<SportEventDto> grid = new Grid<>(SportEventDto.class);
     private Button register = new Button("Register");
+
     private Button logIn = new Button("Log in");
 
 
