@@ -1,75 +1,49 @@
 package com.betting.application.betting.domain;
 
+import com.betting.application.betting.domain.utilities.Result;
+
 import java.time.LocalDateTime;
 import java.util.Objects;
 
 public class BetDto {
-    private Long id;
-    private Long match_id;
-    private Long country_id;
-    private Long league_id;
-    private String country_name;
-    private String league_name;
-    private LocalDateTime match_date_time;
-    private String match_hometeam_name;
-    private String match_awayteam_name;
+    private Long userId;
+    private Long matchId;
+    private Long amount;
+    private Result result;
     private double odd_1;
     private double odd_x;
     private double odd_2;
-    private String match_status;
+    private double amoutChangeAfterClosing;
+    private LocalDateTime open;
+    private LocalDateTime lastEdit;
 
-    public BetDto() {}
-
-    public BetDto(Long id, Long match_id, Long country_id, Long league_id, String country_name, String league_name, LocalDateTime match_date_time, String match_hometeam_name, String match_awayteam_name, double odd_1, double odd_x, double odd_2, String match_status) {
-        this.id = id;
-        this.match_id = match_id;
-        this.country_id = country_id;
-        this.league_id = league_id;
-        this.country_name = country_name;
-        this.league_name = league_name;
-        this.match_date_time = match_date_time;
-        this.match_hometeam_name = match_hometeam_name;
-        this.match_awayteam_name = match_awayteam_name;
+    public BetDto(Long userId, Long matchId, Long amount, Result result, double odd_1, double odd_x, double odd_2, double amoutChangeAfterClosing, LocalDateTime open, LocalDateTime lastEdit) {
+        this.userId = userId;
+        this.matchId = matchId;
+        this.amount = amount;
+        this.result = result;
         this.odd_1 = odd_1;
         this.odd_x = odd_x;
         this.odd_2 = odd_2;
-        this.match_status = match_status;
+        this.amoutChangeAfterClosing = amoutChangeAfterClosing;
+        this.open = open;
+        this.lastEdit = lastEdit;
     }
 
-    public Long getId() {
-        return id;
+    public Long getUserId() {
+        return userId;
     }
 
-    public Long getMatch_id() {
-        return match_id;
+    public Long getMatchId() {
+        return matchId;
     }
 
-    public Long getCountry_id() {
-        return country_id;
+    public Long getAmount() {
+        return amount;
     }
 
-    public Long getLeague_id() {
-        return league_id;
-    }
-
-    public String getCountry_name() {
-        return country_name;
-    }
-
-    public String getLeague_name() {
-        return league_name;
-    }
-
-    public LocalDateTime getMatch_date_time() {
-        return match_date_time;
-    }
-
-    public String getMatch_hometeam_name() {
-        return match_hometeam_name;
-    }
-
-    public String getMatch_awayteam_name() {
-        return match_awayteam_name;
+    public Result getResult() {
+        return result;
     }
 
     public double getOdd_1() {
@@ -84,8 +58,16 @@ public class BetDto {
         return odd_2;
     }
 
-    public String getMatch_status() {
-        return match_status;
+    public double getAmoutChangeAfterClosing() {
+        return amoutChangeAfterClosing;
+    }
+
+    public LocalDateTime getOpen() {
+        return open;
+    }
+
+    public LocalDateTime getLastEdit() {
+        return lastEdit;
     }
 
     @Override
@@ -96,39 +78,17 @@ public class BetDto {
         return Double.compare(betDto.odd_1, odd_1) == 0 &&
                 Double.compare(betDto.odd_x, odd_x) == 0 &&
                 Double.compare(betDto.odd_2, odd_2) == 0 &&
-                id.equals(betDto.id) &&
-                match_id.equals(betDto.match_id) &&
-                country_id.equals(betDto.country_id) &&
-                league_id.equals(betDto.league_id) &&
-                country_name.equals(betDto.country_name) &&
-                league_name.equals(betDto.league_name) &&
-                match_date_time.equals(betDto.match_date_time) &&
-                match_hometeam_name.equals(betDto.match_hometeam_name) &&
-                match_awayteam_name.equals(betDto.match_awayteam_name) &&
-                match_status.equals(betDto.match_status);
+                Double.compare(betDto.amoutChangeAfterClosing, amoutChangeAfterClosing) == 0 &&
+                userId.equals(betDto.userId) &&
+                matchId.equals(betDto.matchId) &&
+                amount.equals(betDto.amount) &&
+                result == betDto.result &&
+                open.equals(betDto.open) &&
+                lastEdit.equals(betDto.lastEdit);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, match_id, country_id, league_id, country_name, league_name, match_date_time, match_hometeam_name, match_awayteam_name, odd_1, odd_x, odd_2, match_status);
-    }
-
-    @Override
-    public String toString() {
-        return "BetDto{" +
-                "id=" + id +
-                ", match_id=" + match_id +
-                ", country_id=" + country_id +
-                ", league_id=" + league_id +
-                ", country_name='" + country_name + '\'' +
-                ", league_name='" + league_name + '\'' +
-                ", match_date_time=" + match_date_time +
-                ", match_hometeam_name='" + match_hometeam_name + '\'' +
-                ", match_awayteam_name='" + match_awayteam_name + '\'' +
-                ", odd_1=" + odd_1 +
-                ", odd_x=" + odd_x +
-                ", odd_2=" + odd_2 +
-                ", match_status='" + match_status + '\'' +
-                '}';
+        return Objects.hash(userId, matchId, amount, result, odd_1, odd_x, odd_2, amoutChangeAfterClosing, open, lastEdit);
     }
 }

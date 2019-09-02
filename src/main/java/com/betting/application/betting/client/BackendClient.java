@@ -1,7 +1,7 @@
 package com.betting.application.betting.client;
 
 import com.betting.application.betting.config.ApiConfig;
-import com.betting.application.betting.domain.BetDto;
+import com.betting.application.betting.domain.SportEventDto;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
 
@@ -22,12 +22,12 @@ public class BackendClient {
         return backendClient;
     }
 
-    public BetDto[] getAvailableBets(){
+    public SportEventDto[] getAvailableSportEvents(){
         URI url = UriComponentsBuilder.fromHttpUrl(apiConfig.getBettingApiEndpoint() + apiConfig.getBettingEndpoint())
                 .build().encode().toUri();
 
         System.out.println(url);
 
-        return restTemplate.getForObject(url, BetDto[].class);
+        return restTemplate.getForObject(url, SportEventDto[].class);
     }
 }

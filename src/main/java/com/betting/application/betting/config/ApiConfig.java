@@ -2,7 +2,7 @@ package com.betting.application.betting.config;
 
 public class ApiConfig {
     private String bettingApiEndpoint = "http://localhost:8080";
-    private String bettingEndpoint = "/betting/getAvailableBets";
+    private String bettingEndpoint = "/betting/getAvailableSportEvents";
 
     private static ApiConfig apiConfig;
 
@@ -12,7 +12,6 @@ public class ApiConfig {
         }
         return apiConfig;
     }
-
 
     public String getBettingApiEndpoint() {
         return bettingApiEndpoint;
