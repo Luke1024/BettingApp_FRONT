@@ -3,6 +3,7 @@ package com.betting.application.betting.views.dashboard;
 import com.betting.application.betting.MainView;
 import com.betting.application.betting.service.SportEventService;
 import com.betting.application.betting.views.dashboard.views.*;
+import com.vaadin.flow.component.Text;
 import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
@@ -32,7 +33,6 @@ public class DashBoard extends VerticalLayout {
 
     public DashBoard() {
         HorizontalLayout menu = new HorizontalLayout(home, placeBets, myBets, myBettingHistory, myAccount, logout);
-        add(menu);
         home.addClickListener(e -> availableBets.setVisible(true));
         placeBets.addClickListener(e -> setVisibilityOfBetsPlacer());
         myBets.addClickListener(e -> setVisibilityOfActiveBets());

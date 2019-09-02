@@ -5,7 +5,6 @@ import com.betting.application.betting.domain.BetPlacerDto;
 import com.betting.application.betting.domain.SportEventDto;
 import com.betting.application.betting.domain.utilities.Result;
 import com.betting.application.betting.views.dashboard.views.BetsPlacer;
-import com.vaadin.flow.component.Text;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.combobox.ComboBox;
 import com.vaadin.flow.component.formlayout.FormLayout;
